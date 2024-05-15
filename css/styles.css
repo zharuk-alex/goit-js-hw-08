@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  font-style: normal;
+}
+
+
+/* gallery */
+.gallery {
+  --items: 3;
+  --col-indent: 24px;
+
+  margin: 24px auto;
+  width: 100%;
+  max-width: 1128px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px var(--col-indent);
+}
+
+.gallery .gallery-item {
+  flex-basis: calc((100% - var(--col-indent) * (var(--items) - 1)) / var(--items));
+  height: 200px;
+  overflow: hidden;
+}
+
+.gallery .gallery-item>img {
+  object-fit: cover;
+  height: 100%;
+}
